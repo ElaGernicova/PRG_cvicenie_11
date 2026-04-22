@@ -26,6 +26,7 @@ def bubble_sort(sequence):
     for it in range(n-1):
         for index in range(n - 1 - it):
             if sequence[index] > sequence[index + 1]:
+                sequence[index], sequence[index + 1] = sequence[index + 1], sequence[index]
                 index_highlight1 = index
                 index_highlight2 = index + 1
                 colors = ["steelblue"] * len(sequence)
@@ -35,7 +36,7 @@ def bubble_sort(sequence):
                 plt.bar(range(len(sequence)), sequence, color=colors)
                 plt.title("Bubble Sort")
                 plt.pause(0.1)
-                sequence[index], sequence[index+1] = sequence[index+1], sequence[index]
+
     plt.ioff()
     plt.show()
     return sequence
