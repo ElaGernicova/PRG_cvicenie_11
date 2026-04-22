@@ -17,12 +17,23 @@ def selection_sort(sequence):
     return sequence
 
 
+def bubble_sort(sequence):
+    sequence = sequence[:]
+    n = len(sequence)
+    for it in range(n-1):
+        for index in range(n - 1 - it):
+            if sequence[index] > sequence[index + 1]:
+                sequence[index], sequence[index+1] = sequence[index+1], sequence[index]
+
+    return sequence
+
 def main():
     sequence = random_numbers(20,0,100)
     sorted_sequence = selection_sort(sequence)
-    a = selection_sort(sequence)
+    bubble_sequence = bubble_sort(sequence)
     print(sequence)
-    print(a)
+    print(sorted_sequence)
+    print(bubble_sequence)
 
 
 if __name__ == "__main__":
