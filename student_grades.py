@@ -46,10 +46,11 @@ class StudentsGrades:
                     sequence[index], sequence[index + 1] = sequence[index + 1], sequence[index]
         return sequence
 
+
 def main():
     results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
     print(results.count())
-    for student in range(results.scores()):
+    for student in range(results.count()):
         print(f"Student {student}: {results.get_by_index(student)} points - {results.get_grade(student)}")
     print(f"Plny pocet bodov mali studenti: {results.find(100)}")
     print(f"Zoradene vysledky: {results.get_sorted()}")
